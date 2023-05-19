@@ -76,7 +76,6 @@ function Product(ID, name, description, price, brand, sizes, activeSize, quantit
             Object.values(review.rating).forEach(value => {
                 ratingSum += value;
                 ratingCount++;
-                console.log(ratingSum);
             });
         });
         return (ratingSum/ratingCount).toFixed(3);
