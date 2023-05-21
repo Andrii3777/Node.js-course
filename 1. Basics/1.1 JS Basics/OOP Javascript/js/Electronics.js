@@ -23,6 +23,9 @@ function Electronics(ID, name, description, price, brand, quantity, date, review
     this.power = power
 }
 
+Electronics.prototype = Object.create(AbstractProduct.prototype);
+Electronics.prototype.constructor = Electronics;
+
 Object.assign(Electronics.prototype, {
     getWarranty() { return this.warranty },
     setWarranty(warranty) { this.warranty = warranty },
@@ -30,6 +33,3 @@ Object.assign(Electronics.prototype, {
     getPower() { return this.power },
     setPower() { this.power = power }
 });
-
-Electronics.prototype = Object.create(AbstractProduct.prototype);
-Electronics.prototype.constructor = Electronics;
