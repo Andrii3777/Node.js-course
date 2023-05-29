@@ -20,7 +20,7 @@ function readHttpLikeInput() {
 
 let contents = readHttpLikeInput();
 
-// 1.2.3 http response
+// 1.2.3 HTTP response
 function outputHttpResponse(statusCode, statusMessage, headers, body) {
     console.log(`HTTP/1.1 ${statusCode} ${statusMessage}`);
     for (let key in headers) {
@@ -29,7 +29,7 @@ function outputHttpResponse(statusCode, statusMessage, headers, body) {
     console.log(`\n${body}`);
 }
 
-// 1.2.3 http response
+// 1.2.3 HTTP response
 function processHttpRequest($method, $uri, $headers, $body) {
     let statusCode, statusMessage, headers, body;
 
