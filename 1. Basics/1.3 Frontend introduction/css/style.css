@@ -1,0 +1,41 @@
+.wrapper {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    margin: 50px 100px;
+    padding: 15px;
+    background-color: rgba(213, 235, 255, 0.317);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.162);
+}
+
+h1 {
+    margin-top: 0;
+}
+
+p {
+    margin-right: 50px;
+}
+
+.my_photo {
+    height: 150px;
+    width: 150px;
+    border-radius: 10%;
+}
+
+.contacts {
+    margin-right: 5px;
+}
+
+.mail {
+    margin-right: 30px;
+    color: gray;
+    text-decoration: none;
+}
+
+.telegram_logo {
+    position: relative;
+    top: 3px;
+    height: 15px;
+    width: 15px;
+}
