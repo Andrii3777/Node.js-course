@@ -228,13 +228,44 @@ function scrollToTop() {
 /*======================== Task 16 ==========================*/
 function showBigSquare() {
     let bigSquare = document.getElementById("bigSquare");
-    
+
     bigSquare.style.display = "flex";
     document.body.style.overflow = 'hidden';
 
-    bigSquare.addEventListener("click", function() {
+    bigSquare.addEventListener("click", function () {
         bigSquare.style.display = "none";
         document.body.style.overflow = "";
-    });    
+    });
 }
 
+/*======================== Task 17 ==========================*/
+(function task17() {
+    document.getElementById("task17Form").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent page reload
+    });
+})();
+
+/*======================== Task 18 ==========================*/
+(function task18() {
+    let fileInput = document.getElementById('fileInput');
+    let fileLabel = document.querySelector('.fileLabel');
+
+    fileInput.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        fileLabel.classList.add('dragover');
+    });
+
+    fileInput.addEventListener('dragleave', () => {
+        fileLabel.classList.remove('dragover');
+    });
+
+    /* fileInput.addEventListener('drop', () => {
+        fileLabel.classList.remove('dragover');
+    }); */
+
+    fileInput.addEventListener('change', (e) => {
+        fileLabel.classList.add('selected');
+        fileLabel.innerHTML = `Selected file: ${e.target.files[0].name}`;
+    });
+
+})();
