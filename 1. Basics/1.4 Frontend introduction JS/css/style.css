@@ -141,10 +141,61 @@ body {
     align-items: center;
     font-size: 64px;
     color: aliceblue;
-    
+
     display: none;
 }
 
 .hidden {
     display: none;
+}
+
+.fileInputСontainer {
+    margin: auto;
+    margin-bottom: 20px;
+    position: relative;
+    width: 300px;
+    height: 100px;
+}
+
+.fileInput {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    z-index: 10;
+}
+
+.fileLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(173, 170, 170, 0.279);
+    border: 4px dashed #ffffff;
+    border-radius: 10px;
+
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.fileLabel.dragover {
+    background-color: rgba(65, 173, 255, 0.934);
+    border: 4px dashed #bafeff;
+    color: #fff;
+}
+
+.fileLabel.selected {
+    background-color: rgba(35, 207, 52, 0.934);
+    border: 4px dashed #bff979;
+    color: #fff;
 }
