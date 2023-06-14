@@ -1,0 +1,150 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.button__container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.black__square,
+.black__square3 {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin-right: 5px;
+}
+
+#yellowSquare {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+
+#redSquare {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    display: none;
+}
+
+#greenRectangle {
+    width: 50px;
+    height: 20px;
+    background-color: green;
+    margin-right: 5px;
+    display: none;
+}
+
+#coordinates,
+#languageContainer,
+#locationContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    padding: 10px;
+    background-color: #321e084e;
+    border-radius: 10px;
+    font-size: 24px;
+    color: aliceblue;
+    width: 80px;
+    text-align: left;
+}
+
+#languageContainer {
+    top: 80px;
+    width: 200px;
+}
+
+#locationContainer {
+    top: 135px;
+    width: 200px;
+}
+
+#task13 {
+    display: flex;
+}
+
+.storage {
+    flex: 1 1 0;
+}
+
+#localStorage,
+#cookies,
+#sessionStorage {
+    margin: auto;
+    background-color: bisque;
+    border-radius: 10px;
+    width: 200px;
+}
+
+#bottomBtn {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #00000062;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    display: none;
+}
+
+#bottomBtn:hover {
+    background-color: #00000095;
+}
+
+#outerBlock {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(190, 167, 141);
+    border-radius: 15px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#innerBlock {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(248, 215, 162);
+    border-radius: 15px;
+}
+
+#bigSquare {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    width: 90vh;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.628);
+
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    color: aliceblue;
+    
+    display: none;
+}
+
+.hidden {
+    display: none;
+}

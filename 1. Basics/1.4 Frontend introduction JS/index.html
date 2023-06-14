@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend JS Practice</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Task 1</h2>
+        <div id="task1" class="task">
+            <div id="blackSquare1" class="black__square"></div>
+            <div class="button__container">
+                <button onclick="hideWithCSS()">Hide with CSS</button>
+                <button onclick="hideWithJS()">Hide with JS</button>
+                <button onclick="hideWithCSSAndJS()">Hide with CSS+JS</button>
+            </div>
+        </div>
+
+        <h2>Task 2</h2>
+        <div id="task2" class="task">
+            <div id="blackSquare2" class="black__square"></div>
+
+            <div class="button__container">
+                <button onclick="hide()">Show/Hide</button>
+            </div>
+
+        </div>
+
+        <h2>Task 3</h2>
+        <div id="task3" class="task">
+            <div class="black__square3"></div>
+            <div class="black__square3"></div>
+            <div class="black__square3"></div>
+            <div class="black__square3"></div>
+            <div class="black__square3"></div>
+
+            <div class="button__container">
+                <button onclick="hide5()">Show/Hide</button>
+            </div>
+
+        </div>
+
+        <h2>Task 4</h2>
+        <div id="task4" class="task">
+            <label for="selectorInput">CSS Selector:</label>
+            <input type="text" id="selectorInput" value="h2">
+            <button onclick="toggleElements()">Show/Hide</button>
+        </div>
+
+        <h2>Task 5</h2>
+        <div id="task5" class="task">
+            <div id="yellowSquare"></div>
+        </div>
+
+        <h2>Task 6</h2>
+        <div id="task6" class="task">
+            <div id="redSquare"></div>
+            <div class="button__container">
+                <button id="redSquareButton">Hover your cursor over me</button>
+            </div>
+        </div>
+
+        <h2>Task 7</h2>
+        <div id="task7" class="task">
+            <div id="greenRectangle"></div>
+            <label for="task7Input">Input:</label>
+            <input type="text" id="task7Input">
+        </div>
+
+        <h2>Task 8</h2>
+        <div id="task8" class="task">
+            <div id="imageContainer"></div>
+
+            <div class="button__container">
+                <label for="imgLinkInput">Image link:</label>
+                <input type="text" id="imgLinkInput" value="">
+                <button onclick="showImage()">Show image</button>
+            </div>
+        </div>
+
+        <h2>Task 9</h2>
+        <div id="task9" class="task">
+            <div id="imagesContainer"></div>
+
+            <div class="button__container">
+                <textarea id="imgLinksArea" rows="5" cols="50"></textarea>
+                <button onclick="showImages()">Show images</button>
+            </div>
+        </div>
+
+        <h2>Task 10</h2>
+        <div id="task10">
+            <div id="coordinates">
+                X: <span id="x"></span>
+                <br>
+                Y: <span id="y"></span>
+            </div>
+            Look at the top right corner!
+        </div>
+
+        <h2>Task 11</h2>
+        <div id="task11">
+            <div id="languageContainer">
+                Language: <span id="language"></span>
+            </div>
+            Look at the top right corner!
+        </div>
+
+        <h2>Task 12</h2>
+        <div id="task12">
+            <div id="locationContainer">
+                LAT: <span id="locationLatitude"></span>
+                <br>
+                LONG: <span id="locationLongitude"></span>
+            </div>
+            Look at the top right corner!
+        </div>
+
+        <h2>Task 13</h2>
+        <div id="task13">
+            <div class="storage">
+                <h3>Local Storage</h3>
+                <div id="localStorage" contenteditable="true"></div>
+            </div>
+            <div class="storage">
+                <h3>Cookies</h3>
+                <div id="cookies" contenteditable="true"></div>
+            </div>
+            <div class="storage">
+                <h3>Session Storage</h3>
+                <div id="sessionStorage" contenteditable="true"></div>
+            </div>
+        </div>
+
+        <h2>Task 14</h2>
+        <div id="task14">
+            Scroll down
+            <button onclick="scrollToTop()" id="bottomBtn">^</button>
+        </div>
+
+        <h2>Task 15</h2>
+        <div id="outerBlock">
+            <div id="innerBlock"></div>
+        </div>
+
+        <h2>Task 16</h2>
+        <button onclick="showBigSquare()" id="showBigSquare">Show big square</button>
+        <div id="bigSquare">Click on me</div>
+
+        <!-- JS -->
+        <script src="./js/script.js"></script>
+</body>
+
+</html>
