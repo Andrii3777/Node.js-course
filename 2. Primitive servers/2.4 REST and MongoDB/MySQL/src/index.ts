@@ -10,7 +10,7 @@ const app = express();
 const port = 3005;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../public'))); // Hosting static files
+// app.use(express.static(path.join(__dirname, '../public'))); // Hosting static files
 app.use(cors({
     origin: 'http://127.0.0.1:5500',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
