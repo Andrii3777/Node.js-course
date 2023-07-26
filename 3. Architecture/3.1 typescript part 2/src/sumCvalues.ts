@@ -6,12 +6,17 @@ interface A {
 function summ(a: A): number {
     const defaultCvalue = 2022;
 
-    const x: number[] = Object.keys(a).map((k) => {
+    const x = Object.keys(a).map((k) => {
         const elem = a[k];
-        if (typeof elem?.cvalue === 'undefined') return defaultCvalue;
-        else if (typeof elem.cvalue === 'string') return +elem.cvalue || defaultCvalue;
-        else if (typeof elem.cvalue === 'object') return summ(elem.cvalue);
-        else return elem.cvalue;
+        if (elem?.cvalue === undefined) {
+            return defaultCvalue;
+        } else if (typeof elem.cvalue === 'string') {
+            return elem.cvalue === '0' ? 0 : +elem.cvalue || defaultCvalue;
+        } else if (typeof elem.cvalue === 'object') {
+            return summ(elem.cvalue);
+        } else {
+            return elem.cvalue;
+        }
     });
 
     let sum = 0;
@@ -33,12 +38,12 @@ function sumCvalues(A: AType): number {
     for (let key in A) {
         const value = A[key];
 
-        if (typeof value?.cvalue === 'undefined') {
+        if (value?.cvalue === undefined) {
             sum += defaultCvalue;
         } else if (typeof value.cvalue === 'number') {
             sum += value.cvalue;
         } else if (typeof value.cvalue === 'string') {
-            sum += +value.cvalue || defaultCvalue;
+            sum += value.cvalue === '0' ? 0 : +value.cvalue || defaultCvalue;
         } else {
             sum += sumCvalues(value.cvalue);
         }
@@ -49,7 +54,7 @@ function sumCvalues(A: AType): number {
 // Test
 const obj1 = {
     hello: { cvalue: 1 },
-    world: { cvalue: { yay: { cvalue: "2" } } }
+    world: { cvalue: { yay: { cvalue: '20' } } }
 };
 
 const obj2 = {
@@ -58,7 +63,15 @@ const obj2 = {
     world: { cvalue: { yay: { cvalue: undefined } } }
 };
 
+const obj3 = {
+    prop1: { cvalue: 10 },
+    prop2: { cvalue: { prop3: { cvalue: { yay: { cvalue: '0' } } } } },
+};
+
+
 console.log('My function:', sumCvalues(obj1));
 console.log('My function:', sumCvalues(obj2));
+console.log('My function:', sumCvalues(obj3));
 console.log('Bug function:', summ(obj1));
 console.log('Bug function:', summ(obj2));
+console.log('Bug function:', summ(obj3));
