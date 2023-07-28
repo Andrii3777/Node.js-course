@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <button id="plusButton">Plus</button>
+    <p id="plusButtonClicks"></p>
+
+    <button id="minusButton">Minus</button>
+    <p id="minusButtonClicks"></p>
+
+    <script>
+        function sendRequest(button) {
+            fetch('/button', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', },
+                body: JSON.stringify({ button }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('plusButtonClicks').innerHTML = data.plusCount;
+                    document.getElementById('minusButtonClicks').innerHTML = data.minusCount;
+                })
+                .catch(err => { console.error('Error:', err); });
+        }
+
+        const plusButton = document.getElementById('plusButton');
+        const minusButton = document.getElementById('minusButton');
+
+        plusButton.addEventListener('click', () => {
+            sendRequest('Plus');
+        });
+
+        minusButton.addEventListener('click', () => {
+            sendRequest('Minus');
+        });
+    </script>
+</body>
+
+</html>
