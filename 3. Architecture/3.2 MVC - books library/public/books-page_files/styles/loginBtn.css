@@ -1,0 +1,16 @@
+#loginBtn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: #fff;
+    border-color: brown;
+    background-color: brown;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+
+#loginBtn:hover {
+    background-color: #ffffff;
+    color: brown;
+}

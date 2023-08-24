@@ -1,0 +1,26 @@
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.pagination-btn {
+    background-color: white;
+    color: #34b96c;
+    border-color: #34b96c;
+    margin: 3px;
+}
+
+.pagination-btn:hover {
+    background-color: #2cc56d;
+    color: #ffffff;
+    border-color: #34b96c;
+}
+
+.pagination-btn.disabled {
+    background-color: rgb(225, 225, 225);
+    color: #000000;
+    border-color: #b3b3b3;
+    pointer-events: none;
+}
