@@ -58,7 +58,6 @@ async function renderSearchedBooksPage(res: Response, searchTerm: string, offset
     });
 }
 
-
 async function renderBooksPage(res: Response, offset: number) {
     res.render('books-page', {
         baseUrl: env.LIBRARY_HOST,
