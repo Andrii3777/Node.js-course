@@ -19,7 +19,7 @@ app.use('/api/v1/', userRouter);
 app.use('/admin/api/v1/', adminRouter);
 
 createAndFillTables();
-//runCron();
+runCron();
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
