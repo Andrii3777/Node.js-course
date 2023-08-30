@@ -66,14 +66,12 @@ export enum SQLQuery {
         LIMIT ?
         OFFSET ?;`,
     getBooksNumber = `
-        SELECT COUNT(*) AS book_count
-        FROM (
-            SELECT DISTINCT b.id
-            FROM book b
+        SELECT COUNT(DISTINCT b.id) AS book_count
+        FROM
+            book b
             JOIN book_author ba ON b.id = ba.bookId
             JOIN author a ON ba.authorId = a.id
-            WHERE b.deleted = 0
-        ) AS unique_books;`,
+            WHERE b.deleted = 0;`,
     getSearchedBooksNumberQuery = `
         SELECT COUNT(DISTINCT b.id) AS book_count
         FROM
