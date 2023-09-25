@@ -1,0 +1,1 @@
+[{"login":"yaropolk@example.com","pass":"$2b$10$eJgh03Lg8VI/ipFwKZ.U/.PWJLxhgzBeWHfj4unDQXUgUDRqmNfry"}]
