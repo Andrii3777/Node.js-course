@@ -54,3 +54,6 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 ```
+
+## Api Reference
+In `development` Swagger documentation located at [http://localhost:3000/api](http://localhost:3000/api)
