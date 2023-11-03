@@ -31,6 +31,8 @@ In `development` Swagger documentation located at [http://localhost:3000/api]
 
 ```bash
 # create .env file and define all environment variables copyvariables
+# and install the dependencies
+$ npm install
 
 # run the docker containers with mysql and star-wars-app
 $ docker-compose up -d
