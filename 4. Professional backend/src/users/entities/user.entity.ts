@@ -23,7 +23,7 @@ export class User {
     @Column({
         type: 'enum',
         enum: Role,
-        default: [Role.Admin]
+        default: [Role.User]
     })
     @ApiProperty({ example: 'user' })
     roles: Role[];
