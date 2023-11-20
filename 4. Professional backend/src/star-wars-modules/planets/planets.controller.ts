@@ -1,0 +1,74 @@
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, DefaultValuePipe, ParseIntPipe } from '@nestjs/common';
+import { PlanetsService } from './planets.service';
+import { CreatePlanetDto } from './dto/create-planet.dto';
+import { UpdatePlanetDto } from './dto/update-planet.dto';
+import { ApiBearerAuth, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Roles } from 'src/auth/decorators/roles.decorator';
+import { Role } from 'src/auth/enums/role.enum';
+import { Planet } from './entities/planet.entity';
+import { ApiPaginatedResponse } from '../pagination';
+
+@ApiTags('Planets')
+@ApiBearerAuth()
+@Controller('planets')
+export class PlanetsController {
+  constructor(private readonly planetsService: PlanetsService) { }
+
+  @Post()
+  @Roles(Role.Admin)
+  @ApiOperation({ summary: 'Create a planet' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
+  @ApiResponse({ status: 403, description: 'Forbidden resource' })
+  @ApiResponse({ status: 201, description: 'Planet created successfully' })
+  @ApiResponse({ status: 400, description: 'Invalid request data' })
+  async create(@Body() createPlanetDto: CreatePlanetDto) {
+    return this.planetsService.create(createPlanetDto);
+  }
+
+  @Get()
+  @Roles(Role.User, Role.Admin)
+  @ApiPaginatedResponse(Planet)
+  @ApiOperation({ summary: 'Get a list of all planets with pagination' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
+  @ApiResponse({ status: 403, description: 'Forbidden resource' })
+  @ApiResponse({ status: 200, description: 'Successfully retrieved', type: [Planet] })
+  async getPage(
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
+    @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
+  ) {
+    return this.planetsService.getPage({ page, limit });
+  }
+
+  @Get(':id')
+  @Roles(Role.User, Role.Admin)
+  @ApiOperation({ summary: 'Get planet information by ID' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
+  @ApiResponse({ status: 403, description: 'Forbidden resource' })
+  @ApiResponse({ status: 200, description: 'Successfully retrieved', type: Planet })
+  @ApiResponse({ status: 404, description: 'Planet not found' })
+  async findOne(@Param('id') id: string) {
+    return this.planetsService.findOne(+id);
+  }
+
+  @Patch(':id')
+  @Roles(Role.Admin)
+  @ApiOperation({ summary: 'Update planet information by ID' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
+  @ApiResponse({ status: 403, description: 'Forbidden resource' })
+  @ApiResponse({ status: 200, description: 'Planet updated successfully' })
+  @ApiResponse({ status: 404, description: 'Planet not found' })
+  async update(@Param('id') id: string, @Body() updatePlanetDto: UpdatePlanetDto) {
+    return this.planetsService.update(+id, updatePlanetDto);
+  }
+
+  @Delete(':id')
+  @Roles(Role.Admin)
+  @ApiOperation({ summary: 'Delete a planet by ID' })
+  @ApiResponse({ status: 401, description: 'Unauthorized' })
+  @ApiResponse({ status: 403, description: 'Forbidden resource' })
+  @ApiResponse({ status: 200, description: 'Planet deleted successfully' })
+  @ApiResponse({ status: 404, description: 'Planet not found' })
+  async remove(@Param('id') id: string) {
+    return this.planetsService.remove(+id);
+  }
+}
