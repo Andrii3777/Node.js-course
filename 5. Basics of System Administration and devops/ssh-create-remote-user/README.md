@@ -22,14 +22,14 @@ This script automates the process of creating a new user on a remote server, ena
 Ensure that the script works seamlessly with both root and sudo-enabled users.
 
 Note
-- **The script can be executed multiple times without causing duplicate entries in sudoers.
+- The script can be executed multiple times without causing duplicate entries in sudoers.
 
 ## Requirements
-- **SSH access to the remote server.
-- **Proper SSH key generation for secure remote access.
+- SSH access to the remote server.
+- Proper SSH key generation for secure remote access.
 
 ## Important
-- **Use this script responsibly, and ensure that SSH access is properly secured.
-- **Always keep backups of important data before making significant changes.
+- Use this script responsibly, and ensure that SSH access is properly secured.
+- Always keep backups of important data before making significant changes.
 
 Disclaimer: Use at your own risk. The author is not responsible for any unintended consequences.
