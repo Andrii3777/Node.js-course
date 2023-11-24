@@ -8,10 +8,10 @@ This script automates the process of creating a new user on a remote server, ena
 
 ```
 
-- **<root_user>: The existing user with root access on the server.
-- **<server_ip>: The IP address of the remote server.
-- **<new_user>: The name of the user to be created.
-- **<ssh_key>: The SSH public key for the new user enclosed in single quotes.
+- <root_user>: The existing user with root access on the server.
+- <server_ip>: The IP address of the remote server.
+- <new_user>: The name of the user to be created.
+- <ssh_key>: The SSH public key for the new user enclosed in single quotes.
 
 ## Example
 ```bash
