@@ -29,4 +29,4 @@ This script is designed to archive files older than 3 minutes in a specified dir
     ```
 
     Replace `/path/to/your/repository` with the actual path to your repository,
-    for example * * * * * /home/andriiubuntu/scripts/archive_script.sh
+    for example `* * * * * /home/andriiubuntu/scripts/archive_script.sh`
