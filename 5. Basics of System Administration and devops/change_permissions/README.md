@@ -23,18 +23,18 @@ This script is designed to automate the process of changing file permissions to 
 
     After changing the permissions according to this script, if all goes well, the output of:
     ```bash
-        ls -l
+    ls -l
     ```
     for the file and folder in the specified directory will look like this:
 
     For files (rights 660):
     ```bash
-        -rw-rw----
+    -rw-rw----
     ```
 
     For folders (rights 770):
     ```bash
-        drwxrwx---
+    drwxrwx---
     ```
 
 ## Permissions Configuration
