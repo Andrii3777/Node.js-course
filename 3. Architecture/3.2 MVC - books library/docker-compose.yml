@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  mysql_library:
+    image: mysql
+    container_name: mysql_library
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - ${MYSQL_PORT}:${MYSQL_PORT}
+    networks:
+      - library-network
+    mem_limit: 512m
+    mem_reservation: 512m
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - library-data:/var/lib/mysql
+    restart: always
+
+  library-app:
+    image: library-app
+    container_name: library-app
+    build: .
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    networks:
+      - library-network
+    environment:
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_USER: ${MYSQL_USERNAME}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      NGINX_PORT: ${NGINX_PORT}
+    depends_on:
+      - mysql_library
+    restart: always
+
+  nginx:
+    image: nginx
+    container_name: library-nginx
+    ports:
+      - ${NGINX_PORT}:${NGINX_PORT}
+      - ${NGINX_HTTPS_PORT}:${NGINX_HTTPS_PORT}
+    depends_on:
+      - library-app
+    restart: always
+    networks:
+      - library-network
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+
+networks:
+  library-network:
+    driver: bridge
+
+volumes:
+  library-data:
+    driver: local
