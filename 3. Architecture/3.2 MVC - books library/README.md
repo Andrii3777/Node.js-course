@@ -1,3 +1,5 @@
+# <div align="center">SHPP LIBRARY</div>
+
 ## Environment Variables
 
 The following environment variables should be defined in your `.env` file:
@@ -26,7 +28,7 @@ The following environment variables should be defined in your `.env` file:
 [http://localhost:3000/api/v1/]
 
 ## Running the app with DOCKER
-## Installation first time only!
+### Installation first time only!
 
 ```bash
 # create .env file and define all environment variables copyvariables
@@ -37,7 +39,7 @@ $ docker-compose up -d
 ```
 
 ## Running the app (without DOCKER)
-## Installation first time only!
+### Installation first time only!
 ```bash
 # create .env file and define all environment variables copyvariables and install the dependencies
 $ npm install
