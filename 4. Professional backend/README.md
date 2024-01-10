@@ -26,7 +26,7 @@ The following environment variables should be defined in your `.env` file:
 - **AWS_S3_BUCKET**: The name of the S3 bucket where your application will store files.
 
 ## Api Reference
-In `development` Swagger documentation located at [http://localhost:3000/api]
+In `development` Swagger documentation located at [http://localhost:3000/api](http://localhost:3000/api)
 
 ## Running the app with DOCKER
 ### Installation first time only!
