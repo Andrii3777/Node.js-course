@@ -1,3 +1,5 @@
+# <div align="center">STAR-WARS APP</div>
+
 ## Environment Variables
 
 The following environment variables should be defined in your `.env` file:
@@ -27,7 +29,7 @@ The following environment variables should be defined in your `.env` file:
 In `development` Swagger documentation located at [http://localhost:3000/api]
 
 ## Running the app with DOCKER
-## Installation first time only!
+### Installation first time only!
 
 ```bash
 # create .env file and define all environment variables copyvariables
@@ -44,7 +46,7 @@ $ npm run migration:run
 ```
 
 ## Running the app (without DOCKER)
-## Installation first time only!
+### Installation first time only!
 ```bash
 # create .env file and define all environment variables copyvariables and install the dependencies
 $ npm install
