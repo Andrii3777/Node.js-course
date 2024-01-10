@@ -1,7 +1,7 @@
 ## Storage Options
 The application supports different storage options for data. This can be configured using the appStorage variable in the code.
 
-```js
+```ts
 // Set the desired storage option
 export const appStorage: 'File' | 'Memory' | 'MongoDB' | 'MySQL' = 'MongoDB';
 ```
